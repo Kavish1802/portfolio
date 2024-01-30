@@ -1,6 +1,6 @@
 import { useRef,useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
-import {useFrame,useThree} from '@React-three/fiber'
+import {useFrame,useThree} from '@react-three/fiber'
 
 import islandScene from '../assets/3d/island.glb';
 
@@ -44,7 +44,5 @@ const Island=(props)=> {
     </a.group>
   );
 }
-
-useGLTF.preload("/island.glb");
 
 export default Island;
