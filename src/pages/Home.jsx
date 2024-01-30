@@ -33,10 +33,15 @@ const Home = () => {
       <Canvas className="w-full h-scren bg-transparent"
         camera={{near:0.1, far:1000}}>
           <Suspense fallback={<loader/>}>
-            <directionalLight/>
-            <ambientLight/>
-            <pointLight/>
+            {/* DIRECTIONAL LIGHT STIMULATES THE LIGHT COMMING FROM A DISTANT SOURCE LIKE A SUN  */}
+            <directionalLight position={[1,1,1]} intensity={2}/>
 
+            {/* ambient light , gives light to all objects eqaully without casting a shadow */}
+            <ambientLight intensity={0.5}/>
+             
+            <spotLight/> 
+             
+            <hemisphereLight skyColor="#5b76fc" groundColor="#000000" intensity={1}/>
 
             <Island
              position={islandPosition}
