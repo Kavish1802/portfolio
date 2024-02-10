@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRef,useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import {useFrame,useThree} from '@react-three/fiber'
@@ -8,9 +9,124 @@ import {a} from '@react-spring/three'
 
 
 
-const Island=(props)=> {
+const Island=({isRotating, setIsRotating, ...props})=> {
   const islandRef=useRef();
+
+  const {gl,viewport} = useThree();
   const { nodes, materials } = useGLTF(islandScene);
+
+  const lastX=useRef(0);
+  const rotationSpeed=useRef(0);
+  const dampingFactor=0.95;
+
+  const handlePointerDown=(e)=>{
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(true);
+
+    const clientX=e.touches?e.touches[0].clientX:e.clientX;
+    lastX.current=clientX;
+
+  }
+
+  const handlePointerUp=(e)=>{
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(false);
+
+    const clientX=e.touches?e.touches[0].clientX:e.clientX;
+
+    const delta=(clientX-lastX.current)/viewport.width;
+
+    //update island position 
+    islandRef.current.rotation.y+=delta*0.01*Math.PI;
+
+    lastX.current=clientX;
+    rotationSpeed.current=delta*0.01*Math.PI;
+  }
+
+  const handlePointerMove=(e)=>{
+    e.stopPropagation();
+    e.preventDefault();
+
+    if(isRotating)
+    {
+      handlePointerUp(e);
+    }
+  }
+  
+  const handleKeyyDown=(e)=>{
+    if(e.Key==='ArrowRight')
+    {
+       setIsRotating(true);
+       islandRef.current.rotation.y-=0.01*(Math.PI);    
+    }
+    else if(e.Key==='ArrowLeft'){
+      if(!isRotating)
+      {
+        setIsRotating(true);
+        islandRef.current.rotation.y+=0.01*(Math.PI);
+      }
+    }
+  }
+
+  const handleKeyUp=(e)=>{
+    if(e.Key==='ArrowRight'||e.Key==='ArrowLeft')
+    {
+      setIsRotating(false);
+    }
+  }
+
+  useEffect(()=>{
+    gl.domElement.addEventListener('pointerdown',handlePointerDown);
+    gl.domElement.addEventListener('pointerup',handlePointerUp);
+    gl.domElement.addEventListener('pointermove',handlePointerMove);
+    gl.domElement.addEventListener('keydown',handleKeyyDown);
+    gl.domElement.addEventListener('keyup',handleKeyUp);
+
+    return ()=>{
+      gl.domElement.removeEventListener('pointerdown',handlePointerDown);
+      gl.domElement.removeEventListener('pointerup',handlePointerUp);
+      gl.domElement.removeEventListener('pointermove',handlePointerMove);
+      gl.domElement.removeEventListener('keydown',handleKeyyDown);
+      gl.domElement.removeEventListener('keyup',handleKeyUp);
+    }
+  },[gl,handlePointerDown,handlePointerUp,handlePointerMove]);
+
+  useFrame(()=>{
+    if(!isRotating)
+    {
+      //islandRef.current.rotation.y+=rotationSpeed.current;
+      rotationSpeed.current*=dampingFactor;
+      if(Math.abs(rotationSpeed.current)<0.0001)
+      {
+        rotationSpeed.current=0;
+      }
+    }
+    else {
+      const rotation=islandRef.current.rotation.y;
+      const normalizedRotation =
+        ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+      // Set the current stage based on the island's orientation
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
+          break;
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+          setCurrentStage(3);
+          break;
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+          setCurrentStage(2);
+          break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+          setCurrentStage(1);
+          break;
+        default:
+          setCurrentStage(null);
+      }
+    }
+  });
   return (
     <a.group ref={islandRef} {...props} >
       <mesh

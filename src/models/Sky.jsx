@@ -9,7 +9,6 @@ const Sky = () => {
   const star=useGLTF(stars);
   return (
     <mesh>
-    
       <primitive object={star.scene}/>
     </mesh>
   )
