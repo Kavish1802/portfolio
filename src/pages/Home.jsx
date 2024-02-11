@@ -40,14 +40,12 @@ const Home = () => {
 
   const [islandScale,islandPosition,islandRotation]=adjustIslandForScreenSize();
   const [isRotating,setIsRotating]=useState(false);
-  
+  const [currentStage,setCurrentStage]=useState(1);
   const [planeScale,planePosition]=adjustPlaneForScreenSize();
    
   return (
     <section className="w-full h-screen relative bg-black">
-      {/* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        popup  
-      </div> */}
+      
       <Canvas className={`w-full h-scren bg-transparent ${isRotating?'cursor-grabbing':'cursor-grab'}`}
         camera={{near:0.1, far:1000}}>
           <Suspense fallback={<loader/>}>
@@ -68,6 +66,8 @@ const Home = () => {
              rotation={islandRotation}
              isRotating={isRotating}
              setIsRotating={setIsRotating}
+             setCurrentStage={setCurrentStage}
+             currentStage={currentStage}
             />
              <Plane 
                isRotating={isRotating}

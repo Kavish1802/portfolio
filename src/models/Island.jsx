@@ -9,7 +9,7 @@ import {a} from '@react-spring/three'
 
 
 
-const Island=({isRotating, setIsRotating, ...props})=> {
+const Island=({isRotating, setIsRotating,setCurrentStage, ...props})=> {
   const islandRef=useRef();
 
   const {gl,viewport} = useThree();
@@ -33,16 +33,6 @@ const Island=({isRotating, setIsRotating, ...props})=> {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
-
-    const clientX=e.touches?e.touches[0].clientX:e.clientX;
-
-    const delta=(clientX-lastX.current)/viewport.width;
-
-    //update island position 
-    islandRef.current.rotation.y+=delta*0.01*Math.PI;
-
-    lastX.current=clientX;
-    rotationSpeed.current=delta*0.01*Math.PI;
   }
 
   const handlePointerMove=(e)=>{
@@ -51,7 +41,15 @@ const Island=({isRotating, setIsRotating, ...props})=> {
 
     if(isRotating)
     {
-      handlePointerUp(e);
+      const clientX=e.touches?e.touches[0].clientX:e.clientX;
+
+    const delta=(clientX-lastX.current)/viewport.width;
+
+    //update island position 
+    islandRef.current.rotation.y+=delta*0.01*Math.PI;
+
+    lastX.current=clientX;
+    rotationSpeed.current=delta*0.01*Math.PI;
     }
   }
   
@@ -81,15 +79,15 @@ const Island=({isRotating, setIsRotating, ...props})=> {
     gl.domElement.addEventListener('pointerdown',handlePointerDown);
     gl.domElement.addEventListener('pointerup',handlePointerUp);
     gl.domElement.addEventListener('pointermove',handlePointerMove);
-    gl.domElement.addEventListener('keydown',handleKeyyDown);
-    gl.domElement.addEventListener('keyup',handleKeyUp);
+    document.addEventListener('keydown',handleKeyyDown);
+    document.addEventListener('keyup',handleKeyUp);
 
     return ()=>{
       gl.domElement.removeEventListener('pointerdown',handlePointerDown);
       gl.domElement.removeEventListener('pointerup',handlePointerUp);
       gl.domElement.removeEventListener('pointermove',handlePointerMove);
-      gl.domElement.removeEventListener('keydown',handleKeyyDown);
-      gl.domElement.removeEventListener('keyup',handleKeyUp);
+      document.removeEventListener('keydown',handleKeyyDown);
+      document.removeEventListener('keyup',handleKeyUp);
     }
   },[gl,handlePointerDown,handlePointerUp,handlePointerMove]);
 
@@ -102,6 +100,7 @@ const Island=({isRotating, setIsRotating, ...props})=> {
       {
         rotationSpeed.current=0;
       }
+      islandRef.current.rotation.y+=rotationSpeed.current;
     }
     else {
       const rotation=islandRef.current.rotation.y;
