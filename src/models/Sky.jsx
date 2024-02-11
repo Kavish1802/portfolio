@@ -13,7 +13,7 @@ const Sky = ({isRotating}) => {
   useFrame((_,delta)=>{
     if(isRotating)
     {
-      starsRef.current.rotation.y+=0.25*delta;
+      starsRef.current.rotation.y+=0.35*delta;
     }
   
   })
