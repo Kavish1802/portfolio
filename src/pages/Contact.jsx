@@ -1,9 +1,92 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
+  const [form, setForm] = useState({name: '', email: '', message: ''});
+  const [isLoading, setIsLoading] = useState(false);
+
+  
+  const handleChange = (e) => { 
+    setForm({...form, [e.target.name]: e.target.value});
+  }
+
+  const handleFocus = (e) => {
+    e.target.classList.add('focused');
+  }
+  const handleBlur = (e) => {
+    e.target.classList.remove('focused');
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setTimeout(()=>{
+      setIsLoading(false);
+      setForm({name: '', email: '', message: ''});
+    }, 2000);
+  }
+
   return (
-    <div>Contacts</div>
+    <section className='relative flex lg:flex-row flex-col max-container'>
+      <div className='flex-1 min-w-[50%] flex flex-col'>
+         <h1 className='head-text'>Get In Touch</h1>
+
+         <form
+          onSubmit={handleSubmit} 
+          className='w-full flex flex-col gap-7 m-14'>
+           <label className='text-black-500 font-semibold'>
+              Name
+              <input 
+                type='text' 
+                className='input' 
+                name="name"
+                  placeholder="Enter your name"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                />
+           </label>
+           <label className='text-black-500 font-semibold'>
+              Email
+              <input  
+                className='input'
+                rows={4} 
+                name="email"
+                placeholder="Enter your email address"
+                required
+                value={form.email}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+              />
+           </label>
+           <label className='text-black-500 font-semibold'>
+              Your Message
+              <textarea
+                type='text' 
+                className="textarea"
+                name="message"
+                placeholder="Enter your message"
+                required
+                value={form.message}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                />
+           </label>
+           <button
+            type="submit"
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className='btn' 
+            > 
+            {isLoading? 'Sending...':'Send Message'}
+           </button> 
+           
+         </form>
+      </div>
+    </section>
   )
 }
 

@@ -18,7 +18,8 @@ const Home = () => {
       screePosition=[0,-6.5,-43];
     }
     else{
-      screenScale=[1,1,1];
+      //increased the size of island for bigger screens
+      screenScale=[1.1,1.1,1.1];
       screePosition=[0,-6.5,-43]; 
     }
     return [screenScale,screePosition,rotation];
