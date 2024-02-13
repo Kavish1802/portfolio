@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 import {arrow} from '../assets/icons'
 
@@ -7,7 +8,9 @@ const InfoBox=({text, link, btnText})=>(
     <p className='font-medium sm:text-xl text-center'>{text}</p>
     <Link to={link} className='neo-brutalism-white neo-btn h-10 w-2'> 
       {btnText}
-      <image src={arrow} className="w-4 h-4 object-contain" />
+      {/* 
+        image not visible idk why!
+      <image src={arrow} className="w-4 h-4 object-contain" /> */}
     </Link>
   </div>
 )
@@ -45,10 +48,12 @@ const renderContent =  {
       )
   }
 
-
-
 const HomeInfo = ({currentStage}) => {
   return renderContent[currentStage]||null;
 }
+
+HomeInfo.propTypes = {
+  currentStage: PropTypes.number.isRequired,
+};
 
 export default HomeInfo

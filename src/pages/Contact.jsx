@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
+import { useRef } from 'react'
 
 const Contact = () => {
+  const formRef=useRef(null);
   const [form, setForm] = useState({name: '', email: '', message: ''});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,7 +34,7 @@ const Contact = () => {
 
          <form
           onSubmit={handleSubmit} 
-          className='w-full flex flex-col gap-7 m-14'>
+          className='w-full flex flex-col gap-7 mt-14 '>
            <label className='text-black-500 font-semibold'>
               Name
               <input 
