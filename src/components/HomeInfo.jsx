@@ -34,9 +34,9 @@ const renderContent =  {
       ),
     3:(
       <InfoBox 
-        text="Worked on multiple projects and in different companies."
+        text="Worked on some projects."
         link="/projects"
-        btnText="See My Journey"
+        btnText="See My Work"
       />
       ),
      4: (
