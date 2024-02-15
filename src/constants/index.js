@@ -1,4 +1,5 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { meta, starbucks, tesla } from "../assets/images";
+import {wiseTech,wiseTechGlobal,consultadd} from "../assets/images";
 import {
     car,
     contact,
@@ -113,8 +114,8 @@ export const experiences = [
     {
         title: "Associate Software Engineer",
         company_name: "Wisetech Global",
-        icon: starbucks,
-        iconBg: "#accbe1",
+        icon: wiseTechGlobal,
+        iconBg: "#1d1765",
         date: "Aug 2023 - Current",
         points: [
             "Developing and maintaining web applications using React.js and other related technologies.",
@@ -126,8 +127,8 @@ export const experiences = [
     {
         title: "Software Engineer Intern",
         company_name: "Consultadd",
-        icon: tesla,
-        iconBg: "#fbc3bc",
+        icon: consultadd,
+        iconBg: "#FAA0A0",
         date: "Jan 2023 - May 2023",
         points: [
             "Developing and maintaining web applications using React.js and other related technologies.",
