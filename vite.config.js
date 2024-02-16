@@ -7,7 +7,21 @@ export default defineConfig({
   assetsInclude:['**/*.glb'],
   build: {
     rollupOptions: {
-      external: ['react-vertical-timeline-component'] 
-    }
-  }
+      plugins: [
+        {
+          name: 'copy-css',
+          resolveId(source) {
+            if (source.endsWith('style.min.css')) {
+              return source;
+            }
+          },
+          load(id) {
+            if (id.endsWith('style.min.css')) {
+              return '';
+            }
+          },
+        },
+      ],
+    },
+  },
 })
