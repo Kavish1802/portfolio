@@ -5,7 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude:['**/*.glb'],
-  rollupOptions:{
-    external:['react-vertical-timeline-component']
+  build: {
+    rollupOptions: {
+      external: ['react-vertical-timeline-component'] 
+    }
   }
 })
