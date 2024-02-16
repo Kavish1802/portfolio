@@ -5,6 +5,9 @@ import StarsCanvas from '../models/StarsCanvas'
 import { skills, experiences } from '../constants'
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component'
 import '../index.css';
+import { tesla } from '../assets/images'
+import './About.css'
+import CTA from '../components/CTA'
 
 const About = () => {
   return (
@@ -42,7 +45,7 @@ const About = () => {
         </div>
       </div>
 
-
+      
       <div className='py-16 flex flex-col'>
         <h3 className='subhead-text'>
           Work Experience
@@ -55,7 +58,6 @@ const About = () => {
         <div className='mt-12 flex'>
           <VerticalTimeline>
             {experiences.map((experience) => (
-              // eslint-disable-next-line react/jsx-key
               <VerticalTimelineElement
               key={experience.company_name}
               date={experience.date}
@@ -94,8 +96,35 @@ const About = () => {
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
-        </div>
+ 
+          {/* <a
+                href={tesla}
+                download="tesla"
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+               <button className="btn btn-primary">Download CV</button>
+          </a>
+   */}
       </div>
+
+        {/* <div className='parent'>
+          <div className='c1'>
+          Helloo
+          </div>
+
+          <div className='c2'>
+          Helloo2
+          </div>
+        <div className='c3'>
+        Helloo3
+        </div>
+      </div> */}
+
+      </div>
+      <hr className='border-slate-200'/>
+      <CTA/>
     </section>
   )
 }

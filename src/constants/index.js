@@ -1,5 +1,5 @@
 import { meta, starbucks, tesla } from "../assets/images";
-import {wiseTech,wiseTechGlobal,consultadd} from "../assets/images";
+import {wiseTech,consultadd} from "../assets/images";
 import {
     car,
     contact,

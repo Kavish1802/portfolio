@@ -15,6 +15,5 @@ export {
     tesla,
     logo,
     wiseTech,
-    wiseTechGlobal,
     consultadd
 }

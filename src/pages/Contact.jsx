@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import StarsCanvas from '../models/StarsCanvas';
 
 const Contact = () => {
   const formRef=useRef(null);
@@ -44,13 +45,14 @@ const Contact = () => {
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
+      <StarsCanvas/>
       <div className='flex-1 min-w-[50%] flex flex-col'>
          <h1 className='head-text'>Get In Touch</h1>
 
          <form
           onSubmit={handleSubmit} 
           className='w-full flex flex-col gap-7 mt-14 '>
-           <label className='text-black-500 font-semibold'>
+           <label className='text-blue-500 font-semibold'>
               Name
               <input 
                 type='text' 
@@ -64,7 +66,7 @@ const Contact = () => {
                   onBlur={handleBlur}
                 />
            </label>
-           <label className='text-black-500 font-semibold'>
+           <label className='text-blue-400 font-semibold'>
               Email
               <input  
                 className='input'
@@ -78,7 +80,7 @@ const Contact = () => {
                 onBlur={handleBlur}
               />
            </label>
-           <label className='text-black-500 font-semibold'>
+           <label className='text-blue-300 font-semibold'>
               Your Message
               <textarea
                 type='text' 

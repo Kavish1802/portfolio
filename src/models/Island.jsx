@@ -53,17 +53,19 @@ const Island=({isRotating, setIsRotating,setCurrentStage, ...props})=> {
     }
   }
   
-  const handleKeyyDown=(e)=>{
-    if(e.Key==='ArrowRight')
+  const handleKeyDown=(e)=>{
+    if(e.key==='ArrowRight')
     {
        setIsRotating(true);
-       islandRef.current.rotation.y-=0.01*(Math.PI);    
+       islandRef.current.rotation.y-=0.01*(Math.PI);
+       rotationSpeed.current=0.0125;    
     }
-    else if(e.Key==='ArrowLeft'){
+    else if(e.key==='ArrowLeft'){
       if(!isRotating)
       {
         setIsRotating(true);
         islandRef.current.rotation.y+=0.01*(Math.PI);
+        rotationSpeed.current=-0.0125;
       }
     }
   }
@@ -79,14 +81,14 @@ const Island=({isRotating, setIsRotating,setCurrentStage, ...props})=> {
     gl.domElement.addEventListener('pointerdown',handlePointerDown);
     gl.domElement.addEventListener('pointerup',handlePointerUp);
     gl.domElement.addEventListener('pointermove',handlePointerMove);
-    document.addEventListener('keydown',handleKeyyDown);
+    document.addEventListener('keydown',handleKeyDown);
     document.addEventListener('keyup',handleKeyUp);
 
     return ()=>{
       gl.domElement.removeEventListener('pointerdown',handlePointerDown);
       gl.domElement.removeEventListener('pointerup',handlePointerUp);
       gl.domElement.removeEventListener('pointermove',handlePointerMove);
-      document.removeEventListener('keydown',handleKeyyDown);
+      document.removeEventListener('keydown',handleKeyDown);
       document.removeEventListener('keyup',handleKeyUp);
     }
   },[gl,handlePointerDown,handlePointerUp,handlePointerMove]);
