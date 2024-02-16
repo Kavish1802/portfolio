@@ -114,7 +114,7 @@ export const experiences = [
     {
         title: "Associate Software Engineer",
         company_name: "Wisetech Global",
-        icon: wiseTechGlobal,
+        icon: wiseTech,
         iconBg: "#1d1765",
         date: "Aug 2023 - Current",
         points: [
