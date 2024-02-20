@@ -29,6 +29,7 @@ import soundoff from './soundoff.png'
 // import camp from './camp.svg'
 import cosmetology from './cosmetology.png'
 import camp1 from './camp1.png'
+import Drag from './Drag.png'
 
 export {
     css,
@@ -60,5 +61,6 @@ export {
     soundon,
     soundoff,
     camp1,
-    cosmetology
+    cosmetology,
+    Drag
 }

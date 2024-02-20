@@ -27,16 +27,16 @@ const renderContent =  {
       ),
      2:(
         <InfoBox 
-         text="Working as a ASDE at WiseTech Global, passionate about software enginering."
+         text="Know More About Me."
          link="/about"
          btnText="About Me"
          />
       ),
     3:(
       <InfoBox 
-        text="Worked on some projects."
+        text="Checkout my Prjects!"
         link="/projects"
-        btnText="See My Work"
+        btnText="Projects"
       />
       ),
      4: (

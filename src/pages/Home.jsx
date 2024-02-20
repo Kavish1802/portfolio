@@ -5,9 +5,11 @@ import Island from '../models/Island'
 import Sky from '../models/Sky'
 import Plane from '../models/Plane'
 import HomeInfo from '../components/HomeInfo'
+// import {Drag} from '../assets/icons'
 
 const Home = () => {
 
+  // const [start, setstart] = useState(1);
 
   const adjustIslandForScreenSize = () =>{
     let screenScale,screePosition;
@@ -50,6 +52,12 @@ const Home = () => {
       <div className='text-white absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage&&<HomeInfo currentStage={currentStage}/>}
       </div>
+      {/* {start && <div
+        onClick={()=>setstart(0)}
+        className='text-white z-10 absolute inset-0 flex items-center justify-center' >
+        Drag to Explore!
+        <img src={Drag} alt="drag" className='w-10 h-10'/>
+      </div>} */}
       <Canvas className={`w-full h-scren bg-transparent ${isRotating?'cursor-grabbing':'cursor-grab'}`}
         camera={{near:0.1, far:1000}}>
           <Suspense fallback={<loader/>}>
@@ -60,12 +68,13 @@ const Home = () => {
             <ambientLight intensity={0}/>
              
             <spotLight/> 
-             
+            {/* HEMISPHERE LIGHT IS USED TO STIMULATE THE LIGHT COMING FROM THE SKY */}
             <hemisphereLight skyColor="#5b76fc" groundColor="#000000" intensity={1}/>
             {/* <Plane/> */}
+        
             <Sky
               isRotating={isRotating}
-            />
+            /> 
             <Island
              position={islandPosition}
              scale={islandScale}
