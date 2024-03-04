@@ -45,10 +45,13 @@ const Contact = () => {
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
-      <StarsCanvas/>
+      {/* <StarsCanvas/> */}
       <div className='flex-1 min-w-[50%] flex flex-col'>
          <h1 className='head-text'>Get In Touch</h1>
-         <h3>kavishgupta2011@gmail.com</h3>
+        <h3 className='flex flex-col gap-3 mt-2 text-blue-200'>
+           I am open to new opportunities and meeting new people. Feel free to reach out to me. 
+           <a className='blue-gradient_text' href="mailto:kavishgupta2011@gmail.com"> kavishgupta2011@gmail.com</a>
+        </h3>
          <form
           onSubmit={handleSubmit} 
           className='w-full flex flex-col gap-7 mt-14 '>
