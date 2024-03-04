@@ -76,8 +76,8 @@ export const experiences = [
             "So, basically Consultadd is a consulting company.",
             "BUT, there's a catch!",
             "I was part of their in-house product development team, where I worked on a Client Tracking Application project, in the frontend team.",
-            "I worked particularly with React improving the UI and UX of the application, and improving the user experience.",
-            "I also improved the perfonce of the application by optimizing the search bars, by the implemntation of debouncing and throttling."
+            "I worked particularly with React improving the UI and UX of the application, and thereby improving user experience.",
+            "I also improved the perfonce of the application by optimizing the search bar's, by implemnting of debouncing and throttling."
         ],
     }
 ];

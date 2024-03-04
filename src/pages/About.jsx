@@ -82,6 +82,7 @@ const About = () => {
                 backgroundColor: experience.iconBg,
                 boxShadow: 'none'
               }}
+              dateClassName={ "text-black" }
               >
                 <div>
                   <h3 className='text-black text-xl font-popins font-semibold'>{experience.title}</h3>
@@ -98,31 +99,8 @@ const About = () => {
             ))}
           </VerticalTimeline>
  
-          {/* <a
-                href={tesla}
-                download="tesla"
-                target="_blank"
-                rel="noreferrer"
-                style={{ textDecoration: "none" }}
-              >
-               <button className="btn btn-primary">Download CV</button>
-          </a>
-   */}
+
       </div>
-
-        {/* <div className='parent'>
-          <div className='c1'>
-          Helloo
-          </div>
-
-          <div className='c2'>
-          Helloo2
-          </div>
-        <div className='c3'>
-        Helloo3
-        </div>
-      </div> */}
-
       </div>
       <hr className='border-slate-200'/>
       <CTA/>

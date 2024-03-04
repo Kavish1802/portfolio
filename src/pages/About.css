@@ -1,27 +1,7 @@
-.parent{
-    background-color: yellow;
-    width:50%;
-    height: 30vh;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    /* flex-direction: column; */
-}
-.c1{
-    background-color: red;
-    width:30%;
-    height: 30%;
-    align-items:center;
-}
-.c2{
-    background-color: rgb(0, 0, 0);
-    width:30%;
-    height: 30%;
-    align-items:center;
-}
-.c3{
-    background-color: rgb(49, 67, 167);
-    width:30%;
-    height: 30%;
-    align-items:center;
+.DateStyle {
+  font-size: 1.5em;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
