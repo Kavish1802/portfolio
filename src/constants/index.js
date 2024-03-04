@@ -1,30 +1,14 @@
-import { meta, starbucks, tesla } from "../assets/images";
 import {wiseTech,consultadd} from "../assets/images";
 import {
-    car,
     contact,
     css,
-    estate,
-    express,
     git,
     github,
     html,
     javascript,
     linkedin,
-    mongodb,
-    motion,
-    mui,
-    nextjs,
-    nodejs,
-    pricewise,
     react,
     redux,
-    sass,
-    snapgram,
-    summiz,
-    tailwindcss,
-    threads,
-    typescript,
     camp1,
     cosmetology
 } from "../assets/icons";
@@ -35,11 +19,6 @@ export const skills = [
         name: "CSS",
         type: "Frontend",
     },
-    // {
-    //     imageUrl: express,
-    //     name: "Express",
-    //     type: "Backend",
-    // },
     {
         imageUrl: git,
         name: "Git",
@@ -60,31 +39,6 @@ export const skills = [
         name: "JavaScript",
         type: "Frontend",
     },
-    // {
-    //     imageUrl: mongodb,
-    //     name: "MongoDB",
-    //     type: "Database",
-    // },
-    // {
-    //     imageUrl: motion,
-    //     name: "Motion",
-    //     type: "Animation",
-    // },
-    // {
-    //     imageUrl: mui,
-    //     name: "Material-UI",
-    //     type: "Frontend",
-    // },
-    // {
-    //     imageUrl: nextjs,
-    //     name: "Next.js",
-    //     type: "Frontend",
-    // },
-    // {
-    //     imageUrl: nodejs,
-    //     name: "Node.js",
-    //     type: "Backend",
-    // },
     {
         imageUrl: react,
         name: "React",
@@ -95,21 +49,6 @@ export const skills = [
         name: "Redux",
         type: "State Management",
     },
-    // {
-    //     imageUrl: sass,
-    //     name: "Sass",
-    //     type: "Frontend",
-    // },
-    // {
-    //     imageUrl: tailwindcss,
-    //     name: "Tailwind CSS",
-    //     type: "Frontend",
-    // },
-    // {
-    //     imageUrl: typescript,
-    //     name: "TypeScript",
-    //     type: "Frontend",
-    // }
 ];
 
 export const experiences = [
@@ -118,12 +57,12 @@ export const experiences = [
         company_name: "Wisetech Global",
         icon: wiseTech,
         iconBg: "#1d1765",
+        textBg: "#83c6fc",
         date: "Aug 2023 - Current",
         points: [
-            "Developing and maintaining web applications using React.js and Java, SpringBoot.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "I intialially joined Blume Global which then got acquired by Wisetech.",
+            "So here in Blume I work in visiblity team under Track and Trace division. Visiblity team is behind one of our flagship product BlumeMaps.",
+            "I generally work with React and Spring Boot, with a bit other development instruments like kubernates, docker, Git and github. ",
         ],
     },
     {
@@ -131,40 +70,16 @@ export const experiences = [
         company_name: "Consultadd",
         icon: consultadd,
         iconBg: "#FAA0A0",
+        textBg: "#fce1e1",
         date: "Jan 2023 - May 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "So, basically Consultadd is a consulting company.",
+            "BUT, there's a catch!",
+            "I was part of their in-house product development team, where I worked on a Client Tracking Application project, in the frontend team.",
+            "I worked particularly with React improving the UI and UX of the application, and improving the user experience.",
+            "I also improved the perfonce of the application by optimizing the search bars, by the implemntation of debouncing and throttling."
         ],
-    },
-    // {
-    //     title: "Web Developer",
-    //     company_name: "Shopify",
-    //     icon: shopify,
-    //     iconBg: "#b7e4c7",
-    //     date: "Jan 2022 - Jan 2023",
-    //     points: [
-    //         "Developing and maintaining web applications using React.js and other related technologies.",
-    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //         "Implementing responsive design and ensuring cross-browser compatibility.",
-    //         "Participating in code reviews and providing constructive feedback to other developers.",
-    //     ],
-    // },
-    // {
-    //     title: "Full stack Developer",
-    //     company_name: "Meta",
-    //     icon: meta,
-    //     iconBg: "#a2d2ff",
-    //     date: "Jan 2023 - Present",
-    //     points: [
-    //         "Developing and maintaining web applications using React.js and other related technologies.",
-    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //         "Implementing responsive design and ensuring cross-browser compatibility.",
-    //         "Participating in code reviews and providing constructive feedback to other developers.",
-    //     ],
-    // },
+    }
 ];
 
 export const socialLinks = [
@@ -176,12 +91,12 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/Kavish1802',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'www.linkedin.com/in/kavishgupta2011',
     }
 ];
 
@@ -199,33 +114,5 @@ export const projects = [
         name: 'Cometology Website',
         description: 'Delivered a freelance project for a local cosmetology clinic in my hometown, was made using wordpress and deployed on hostinger. Has good intuitive UI and appointment scheduling system.',
         link: 'https://enchantingskinaesthetics.com/',
-    },
-    // {
-    //     iconUrl: car,
-    //     theme: 'btn-back-blue',
-    //     name: 'Car Finding App',
-    //     description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-    //     link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    // },
-    // {
-    //     iconUrl: snapgram,
-    //     theme: 'btn-back-pink',
-    //     name: 'Full Stack Instagram Clone',
-    //     description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-    //     link: 'https://github.com/adrianhajdin/social_media_app',
-    // },
-    // {
-    //     iconUrl: estate,
-    //     theme: 'btn-back-black',
-    //     name: 'Real-Estate Application',
-    //     description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-    //     link: 'https://github.com/adrianhajdin/projects_realestate',
-    // },
-    // {
-    //     iconUrl: summiz,
-    //     theme: 'btn-back-yellow',
-    //     name: 'AI Summarizer Application',
-    //     description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-    //     link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    // }
+    }
 ];

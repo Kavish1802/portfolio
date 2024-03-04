@@ -48,7 +48,7 @@ const Contact = () => {
       <StarsCanvas/>
       <div className='flex-1 min-w-[50%] flex flex-col'>
          <h1 className='head-text'>Get In Touch</h1>
-
+         <h3>kavishgupta2011@gmail.com</h3>
          <form
           onSubmit={handleSubmit} 
           className='w-full flex flex-col gap-7 mt-14 '>
@@ -98,7 +98,7 @@ const Contact = () => {
             type="submit"
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className='btn' 
+            className='btn width-20' 
             > 
             {isLoading? 'Sending...':'Send Message'}
            </button> 

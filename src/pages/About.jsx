@@ -75,6 +75,7 @@ const About = () => {
                 borderBottom:'8px',
                 borderStyle:'solid',
                 borderBottomColor: experience.iconBg,
+                backgroundColor: experience.textBg,
                 boxShadow:'none'
               }}
               iconStyle={{
@@ -90,7 +91,7 @@ const About = () => {
                 <ul className='my-5 list-disc ml-5 space-y-2'>
                   {experience.points.map((point) => ( 
                     // eslint-disable-next-line react/jsx-key
-                    <li  className='text-black-500/50 font-normal pl-1 text-sm'>{point}</li>
+                    <li  className='text-black-500/100 font-normal pl-1 text-sm'>{point}</li>
                   ))}
                 </ul>
               </VerticalTimelineElement>
