@@ -127,7 +127,7 @@ const Contact = () => {
             type="submit"
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className='btn width-full' 
+            className='width-10' 
             text={isLoading? 'Sending...':'Send Message'}
             > 
             

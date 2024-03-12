@@ -10,7 +10,8 @@ import {
     react,
     redux,
     camp1,
-    cosmetology
+    cosmetology,
+    github2
 } from "../assets/icons";
 
 export const skills = [
@@ -25,7 +26,7 @@ export const skills = [
         type: "Version Control",
     },
     {
-        imageUrl: github,
+        imageUrl: github2,
         name: "GitHub",
         type: "Version Control",
     },

@@ -30,6 +30,7 @@ import soundoff from './soundoff.png'
 import cosmetology from './cosmetology.png'
 import camp1 from './camp1.png'
 import Drag from './Drag.png'
+import github2 from './github2.svg'
 
 export {
     css,
@@ -62,5 +63,6 @@ export {
     soundoff,
     camp1,
     cosmetology,
-    Drag
+    Drag,
+    github2
 }
